@@ -1,23 +1,23 @@
 {
-    "name": "my_package",
-    "description": "",
-    "version": "1.0.0",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": " https://github.com/Teddir/Learn-NodeJs.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.17.1",
-        "nodemon": "^2.0.12"
-    },
-    "bugs": {
-      "url": "https://github.com/monatheoctocat/my_package/issues"
-    },
-    "homepage": "https://github.com/Teddir/Learn-NodeJs.git"
-  }
+  "name": "my_package",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/Teddir/Learn-NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "bugs": {
+    "url": "https://github.com/monatheoctocat/my_package/issues"
+  },
+  "homepage": "https://github.com/Teddir/Learn-NodeJs.git"
+}
