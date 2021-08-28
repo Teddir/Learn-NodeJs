@@ -1,6 +1,10 @@
 let express = require('express')
 let app = express()
+<<<<<<< HEAD
 let port = process.env.PORT || 8000
+=======
+let port = process.env.PORT || 5000
+>>>>>>> 2a1cd41882c84d4e85207f2a9856994da894a78b
 
 const {
   seeTodoAll,
