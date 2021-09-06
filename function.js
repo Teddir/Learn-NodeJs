@@ -98,7 +98,8 @@ exports.addDataTodo = function (
   category = '',
   date,
   note = '',
-  template = []
+  template = [],
+  status = 'todos',
 ) {
   if (fs.existsSync(`./src/${nameFile}.json`)) {
 
@@ -126,6 +127,7 @@ exports.addDataTodo = function (
         "date": date,
         "note": note,
         "template": template,
+        "status": status,
       }
       arr.push(rek)
       let nilaia = fs.writeFileSync(`./src/${nameFile}.json`, JSON.stringify(nilai))
@@ -148,6 +150,7 @@ exports.addDataTodo = function (
         "date": date,
         "note": note,
         "template": template,
+        "status": status,
       }
       arr.push(rek)
       let nilaia = fs.writeFileSync(`./src/${nameFile}.json`, JSON.stringify(nilai))
@@ -166,13 +169,14 @@ exports.renameDataTodo = function (
   category,
   date,
   note,
-  template
+  template,
+  status
 ) {
   if (fs.existsSync(`./src/${nameFile}.json`)) {
 
     let nilai = JSON.parse(fs.readFileSync(`./src/${nameFile}.json`, 'utf8'))
     let arr = nilai.data
-    let status = 0
+    let kod = 0
     // cek namaFile harus ada
     if (nameFile === undefined || id === undefined) {
       return `Failed rename todolist ${nameFile}.json`
@@ -181,7 +185,7 @@ exports.renameDataTodo = function (
     for (let i = 0; i < arr.length; i++) {
       const element = arr[i];
       if (element.id.toString() === id) {
-        status = 1
+        kod = 1
         if (judul) {
           element.judul = judul
         } else {
@@ -212,11 +216,17 @@ exports.renameDataTodo = function (
           element.template = element.template
         }
 
+        if (status) {
+          element.status = status
+        } else {
+          element.status = element.status
+        }
+
         arr[i] = element
       }
     }
 
-    if (status === 1) {
+    if (kod === 1) {
       let nilaia = fs.writeFileSync(`./src/${nameFile}.json`, JSON.stringify(nilai))
       let nilaiNew = JSON.parse(fs.readFileSync(`./src/${nameFile}.json`, 'utf8'))
       return `Sucess rename data : ${JSON.stringify(nilaiNew)}`

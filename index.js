@@ -53,7 +53,8 @@ app.post('/todo/add/:name_file', (req, res) => {
     req.body.category,
     req.body.date,
     req.body.note,
-    req.body.template
+    req.body.template,
+    req.body.status
   ))
 })
 
@@ -66,7 +67,8 @@ app.put('/todo/rename/:name_file/:id', (req, res) => {
     req.body.category,
     req.body.date,
     req.body.note,
-    req.body.template
+    req.body.template,
+    req.body.status
   ))
 })
 
