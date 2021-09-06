@@ -1,6 +1,7 @@
 let express = require('express')
 let app = express()
-let port = process.env.PORT || 3000
+let cors = require('cors')
+let port = process.env.PORT || 8080
 
 const {
   seeTodoAll,
@@ -13,6 +14,7 @@ const {
   deleteDataTodo
 } = require('./function')
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (_, res) => {
   res.send("Hello NodeJs")
