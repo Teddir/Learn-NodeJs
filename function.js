@@ -3,7 +3,7 @@ var fs = require("fs")
 exports.seeTodoAll = function () {
   try {
     let nilai = fs.readdirSync("./src")
-    return `success : ${JSON.stringify(nilai)}`
+    return {status : 'success', data : JSON.stringify(nilai), kode : 202}
   } catch (error) {
     return `File ${nilai} not found`
   }
@@ -89,7 +89,7 @@ exports.deleteTodo = function (name) {
 
 exports.seeDataTodo = function (nameFile) {
   let nilai = JSON.parse(fs.readFileSync(`./src/${nameFile}.json`, 'utf8'))
-  return `Sucess : ${JSON.stringify(nilai.data)}`
+  return {status : 'success', data : JSON.stringify(nilai.data), kode : 202}
 }
 
 exports.addDataTodo = function (
